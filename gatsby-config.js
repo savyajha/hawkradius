@@ -45,8 +45,9 @@ module.exports = {
                 routes: routesConfig,
                 plugins: [
                     {
-                        resolve: `gatsby-plugin-ghost-images`,
+                       resolve: `gatsby-plugin-ghost-images`,
                         options: {
+                            lookup: [],
                             disable: true,
                         },
                     },
