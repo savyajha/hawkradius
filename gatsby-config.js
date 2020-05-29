@@ -18,13 +18,13 @@ try {
     ghostConfig = require(`./.ghost`)
 } catch (e) {
     ghostConfig = {
-        development: {
-            apiUrl: process.env.GHOST_API_URL,
-            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        "development": {
+            "apiUrl": "https://blog-admin.hawkradius.com",
+            "contentApiKey": "400c0ccef8435b6ecde6640430",
         },
-        production: {
-            apiUrl: process.env.GHOST_API_URL,
-            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        "production": {
+            "apiUrl": "https://blog-admin.hawkradius.com",
+            "contentApiKey": "400c0ccef8435b6ecde6640430",
         },
     }
 } finally {
@@ -52,7 +52,7 @@ module.exports = {
                 // Note that this setting has an effect only, if
                 //    1. The user has not changed the dark mode
                 //    2. Dark mode is not reported from OS
-                defaultModeDark: false,
+                defaultModeDark: true,
                 // If you want the defaultModeDark setting to take precedence
                 // over the mode reported from OS, set this to true (default: false)
                 overrideOS: false,
