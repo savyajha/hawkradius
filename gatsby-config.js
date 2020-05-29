@@ -40,24 +40,24 @@ module.exports = {
         {
             resolve: `gatsby-plugin-ghost-images`,
             options: {
-                disable: true,
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                disable: true,
-            },
-        },
-        {
-            resolve: `gatsby-plugin-sharp`,
-            options: {
-                disable: true,
-            },
-        },
-        {
-            resolve: `gatsby-transformer-sharp`,
-            options: {
+                lookup: [
+                    {
+                        type: `GhostPost`,
+                        imgTags: [``],
+                    },
+                    {
+                        type: `GhostPage`,
+                        imgTags: [``],
+                    },
+                    {
+                        type: `GhostSettings`,
+                        imgTags: [``],
+                    },
+                ],
+                exclude: node => (
+                    node.ghostId === undefined
+                ),
+                verbose: true,
                 disable: true,
             },
         },
