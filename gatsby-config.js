@@ -44,6 +44,24 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                disable: true,
+            },
+        },
+        {
+            resolve: `gatsby-plugin-sharp`,
+            options: {
+                disable: true,
+            },
+        },
+        {
+            resolve: `gatsby-transformer-sharp`,
+            options: {
+                disable: true,
+            },
+        },
+        {
             resolve: `gatsby-theme-try-ghost`,
             options: {
                 ghostConfig: ghostConfig,
