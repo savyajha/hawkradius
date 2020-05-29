@@ -80,6 +80,7 @@ module.exports = {
         },
         {
             resolve: `gatsby-plugin-ghost-images`,
+            options: {
                 disable: true,
             },
         },
