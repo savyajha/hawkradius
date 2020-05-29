@@ -38,6 +38,12 @@ try {
 module.exports = {
     plugins: [
         {
+            resolve: `gatsby-plugin-ghost-images`,
+            options: {
+                disable: true,
+            },
+        },
+        {
             resolve: `gatsby-theme-try-ghost`,
             options: {
                 ghostConfig: ghostConfig,
