@@ -43,15 +43,15 @@ module.exports = {
                 ghostConfig: ghostConfig,
                 siteConfig: siteConfig,
                 routes: routesConfig,
-            },
-            plugins: [
-                {
-                    resolve: `gatsby-plugin-ghost-images`,
-                    options: {
-                        disable: true,
+                plugins: [
+                    {
+                        resolve: `gatsby-plugin-ghost-images`,
+                        options: {
+                            disable: true,
+                        },
                     },
-                },
-            ],
+                ],
+            },
         },
         {
             resolve: `gatsby-theme-ghost-dark-mode`,
