@@ -43,15 +43,15 @@ module.exports = {
                 ghostConfig: ghostConfig,
                 siteConfig: siteConfig,
                 routes: routesConfig,
-                plugins: [
-                    {
-                        resolve: `gatsby-plugin-ghost-images`,
-                        options: {
-                            disable: true,
-                        },
-                    },
-                ],
             },
+            plugins: [
+                {
+                    resolve: `gatsby-plugin-ghost-images`,
+                    options: {
+                        disable: true,
+                    },
+                },
+            ],
         },
         {
             resolve: `gatsby-theme-ghost-dark-mode`,
@@ -68,6 +68,23 @@ module.exports = {
         },
         {
             resolve: `gatsby-theme-ghost-members`,
+        },
+        {
+            resolve: `gatsby-transformer-rehype`,
+            options: {
+                filter: node => (
+                    node.internal.type === `GhostPost` ||
+                    node.internal.type === `GhostPage`
+                ) && node.slug !== `data-schema`,
+                plugins: [
+                    {
+                        resolve: `gatsby-rehype-ghost-links`,
+                    },
+                    {
+                        resolve: `gatsby-rehype-prismjs`,
+                    },
+                ],
+            },
         },
     ],
 }
