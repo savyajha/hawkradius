@@ -38,30 +38,6 @@ try {
 module.exports = {
     plugins: [
         {
-            resolve: `gatsby-plugin-ghost-images`,
-            options: {
-                lookup: [
-                    {
-                        type: `GhostPost`,
-                        imgTags: [``],
-                    },
-                    {
-                        type: `GhostPage`,
-                        imgTags: [``],
-                    },
-                    {
-                        type: `GhostSettings`,
-                        imgTags: [``],
-                    },
-                ],
-                exclude: node => (
-                    node.ghostId === undefined
-                ),
-                verbose: true,
-                disable: true,
-            },
-        },
-        {
             resolve: `gatsby-theme-try-ghost`,
             options: {
                 ghostConfig: ghostConfig,
@@ -100,6 +76,11 @@ module.exports = {
                         resolve: `gatsby-rehype-prismjs`,
                     },
                 ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-ghost-images`,
+                disable: true,
             },
         },
     ],
