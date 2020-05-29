@@ -43,6 +43,14 @@ module.exports = {
                 ghostConfig: ghostConfig,
                 siteConfig: siteConfig,
                 routes: routesConfig,
+                plugins: [
+                    {
+                        resolve: `gatsby-plugin-ghost-images`,
+                        options: {
+                            disable: true,
+                        },
+                    },
+                ],
             },
         },
         {
@@ -76,12 +84,6 @@ module.exports = {
                         resolve: `gatsby-rehype-prismjs`,
                     },
                 ],
-            },
-        },
-        {
-            resolve: `gatsby-plugin-ghost-images`,
-            options: {
-                disable: true,
             },
         },
     ],
