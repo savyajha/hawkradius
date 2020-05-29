@@ -43,15 +43,6 @@ module.exports = {
                 ghostConfig: ghostConfig,
                 siteConfig: siteConfig,
                 routes: routesConfig,
-                plugins: [
-                    {
-                       resolve: `gatsby-plugin-ghost-images`,
-                        options: {
-                            lookup: [],
-                            disable: true,
-                        },
-                    },
-                ],
             },
         },
         {
@@ -70,28 +61,21 @@ module.exports = {
         {
             resolve: `gatsby-theme-ghost-members`,
         },
-//        {
-//           resolve: `gatsby-transformer-rehype`,
-//            options: {
-//                filter: node => (
-//                    node.internal.type === `GhostPost` ||
-//                   node.internal.type === `GhostPage`
-//                ) && node.slug !== `data-schema`,
-//                plugins: [
-//                    {
-//                        resolve: `gatsby-rehype-ghost-links`,
-//                    },
-//                   {
-//                        resolve: `gatsby-rehype-prismjs`,
-//                    },
-//                ],
-//            },
-//        },
         {
-            resolve: `gatsby-plugin-ghost-images`,
+           resolve: `gatsby-transformer-rehype`,
             options: {
-                lookup: [],
-                disable: true,
+                filter: node => (
+                    node.internal.type === `GhostPost` ||
+                    node.internal.type === `GhostPage`
+                ) && node.slug !== `data-schema`,
+                plugins: [
+                    {
+                        resolve: `gatsby-rehype-ghost-links`,
+                    },
+                   {
+                        resolve: `gatsby-rehype-prismjs`,
+                    },
+                ],
             },
         },
     ],
