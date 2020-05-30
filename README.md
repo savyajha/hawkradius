@@ -1,4 +1,5 @@
 # gatsby-starter-try-ghost
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ab012e6f-a7bc-4a19-8cda-4cf1b2ac47b7/deploy-status)](https://app.netlify.com/sites/hawkradius-deux/deploys)
 [![Released under MIT license.](https://badgen.net/github/license/micromatch/micromatch)](https://github.com/styxlab/gatsby-starter-try-ghost/blob/master/LICENSE)
 [![gatsby-starter-try-ghost npm package version.](https://badgen.net/npm/v/gatsby-starter-try-ghost)](https://www.npmjs.org/package/gatsby-starter-try-ghost)
 
