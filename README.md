@@ -1,4 +1,4 @@
-# gatsby-starter-try-ghost
+# Hawk Radius (Built using gatsby-starter-try-ghost)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ab012e6f-a7bc-4a19-8cda-4cf1b2ac47b7/deploy-status)](https://app.netlify.com/sites/hawkradius-deux/deploys)
 [![Released under MIT license.](https://badgen.net/github/license/micromatch/micromatch)](https://github.com/styxlab/gatsby-starter-try-ghost/blob/master/LICENSE)
 [![gatsby-starter-try-ghost npm package version.](https://badgen.net/npm/v/gatsby-starter-try-ghost)](https://www.npmjs.org/package/gatsby-starter-try-ghost)
@@ -7,16 +7,13 @@ A Gatsby starter for creating blogs from headless [Ghost CMS](https://ghost.org/
 
 Turn your Ghost blog into a flaring fast static website. This Gatsby theme is a front-end replacement of the Ghost Handlebars engine featuring the standard Ghost Casper skin and functionality. All content is sourced from a headless Ghost CMS.
 
-
 ## Tutorials ✨ 🆕
 
 >Check out the [Tutorials](https://www.jamify.org) for practical guides on using this project.
 
-
 ## Demo
 
 >Play with the [Demo](https://demo.jamify.org/) to get a first impression.
-
 
 [![gatsby-starter-try-ghost](https://static.gotsby.org/v1/assets/images/jamify-demo.png)](https://styxlab.github.io) 
 
@@ -40,7 +37,7 @@ Turn your Ghost blog into a flaring fast static website. This Gatsby theme is a 
 
 ## Performance
 
-![Lighthouse Score](https://static.gotsby.org/v1/assets/images/jamify-lighthouse.png)
+![Lighthouse Score](https://res.cloudinary.com/genghiz/image/upload/c_limit,f_auto,q_auto:eco,w_1600/v1590943148/hawkradius_web_dev_measure.png)
 
 ## Included Plugins
 
@@ -158,9 +155,19 @@ Change the url and keys to match your own Ghost CMS Content API keys.
 
 After completion of the build process your static site can be found in the `public/` folder. Copy those files over to your webserver.
 
-## Deploy on Gatsby Cloud
+## Deploy on Netlify
 
-Fork `gatsby-starter-try-ghost` in GitHub. After logging into Gatsby Cloud make sure Gatsby Cloud has access rights to your forked repository. Select *I already have a Gatsby Site* and then pick *gatsby-starter-try-ghost*. Skip integrations. For a first test also skip content keys. The build should start immediately and show the demo site. Provide content keys in order to source in your own content from Ghost CMS.
+The theme and starter contain two config files specifically for deploying with Netlify. A `netlify.toml` file for build settings, and a `/static/_headers` file with default security headers set for all routes.
+
+To deploy to your Netlify account, hit the button below.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/styxlab/gatsby-starter-try-ghost)
+
+Content API Keys are generally not considered to be sensitive information, they exist so that they can be changed in the event of abuse; so most people commit it directly to their `.ghost.json` config file. If you prefer to keep this information out of your repository you can remove this config and set [Netlify ENV variables](https://www.netlify.com/docs/continuous-deployment/#build-environment-variables) for production builds instead.
+
+Once deployed, you can set up a [Ghost + Netlify Integration](https://docs.ghost.org/integrations/netlify/) to use deploy hooks from Ghost to trigger Netlify rebuilds. That way, any time data changes in Ghost, your site will rebuild on Netlify.
+
+&nbsp;
 
 ## Ensure headless mode of Ghost CMS
 
