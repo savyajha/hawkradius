@@ -18,13 +18,13 @@ try {
     ghostConfig = require(`./.ghost`)
 } catch (e) {
     ghostConfig = {
-        "development": {
-            "apiUrl": "https://blog-admin.hawkradius.com",
-            "contentApiKey": "400c0ccef8435b6ecde6640430",
+        development: {
+            apiUrl: process.env.GHOST_API_URL,
+            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
         },
-        "production": {
-            "apiUrl": "https://blog-admin.hawkradius.com",
-            "contentApiKey": "400c0ccef8435b6ecde6640430",
+        production: {
+            apiUrl: process.env.GHOST_API_URL,
+            contentApiKey: process.env.GHOST_CONTENT_API_KEY,
         },
     }
 } finally {
@@ -62,7 +62,7 @@ module.exports = {
 //            resolve: `gatsby-theme-ghost-members`,
 //        },
         {
-           resolve: `gatsby-transformer-rehype`,
+            resolve: `gatsby-transformer-rehype`,
             options: {
                 filter: node => (
                     node.internal.type === `GhostPost` ||
@@ -72,7 +72,7 @@ module.exports = {
                     {
                         resolve: `gatsby-rehype-ghost-links`,
                     },
-                   {
+                    {
                         resolve: `gatsby-rehype-prismjs`,
                     },
                 ],
