@@ -23,4 +23,10 @@ module.exports = {
     themeColor: `#15171A`,
 
     gatsbyImages: false,
+
+    // Show more logs for debugging purposes (default: false)
+    verbose: false,
+
+    // Severity for verbose mode: (`info`, `warn`, `error`)
+    severity: `info`,
 }
